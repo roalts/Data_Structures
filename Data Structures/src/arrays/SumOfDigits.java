@@ -1,0 +1,16 @@
+package arrays;
+
+public class SumOfDigits {
+	
+	public static int sumOfDigits(int a){
+		if(a == 0){
+			return 0;
+		}
+		else
+			return a%10 + sumOfDigits(a/10);
+	}
+
+	public static void main(String[] args){
+		System.out.println(sumOfDigits(999));
+	}
+}

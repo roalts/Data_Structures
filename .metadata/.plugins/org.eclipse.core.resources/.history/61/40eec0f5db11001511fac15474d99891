@@ -1,0 +1,18 @@
+package arrays;
+
+public class StringToInt {
+
+	public static int convertToInt(String s, int a){
+		if(a > 0)
+			return 0;
+		else
+			return (int) (s.charAt(a)*Math.pow(10, (s.length()-a-1))) + convertToInt(s, a-1);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String s = "1231";
+		System.out.println(convertToInt(s, s.length()-1));
+	}
+
+}

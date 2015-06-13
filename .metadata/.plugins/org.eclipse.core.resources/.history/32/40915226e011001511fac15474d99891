@@ -1,0 +1,27 @@
+package arrays;
+
+import java.util.Scanner;
+
+public class AdjacentLetters {
+
+	public static String checkAdjacent(String a, int b) {
+		if(a.length() - 1 == 0)
+			return a;
+		else if(a.charAt(b) == a.charAt(b+1)){
+			a = a.substring(0,1)+ "*" + a.substring(1);
+			return checkAdjacent(a,b+2);
+		}
+		else
+			return checkAdjacent(a,b+1);
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner s = new Scanner(System.in);
+		String a = s.next();
+		s.close();
+		System.out.println(checkAdjacent(a,0));
+	}
+
+}

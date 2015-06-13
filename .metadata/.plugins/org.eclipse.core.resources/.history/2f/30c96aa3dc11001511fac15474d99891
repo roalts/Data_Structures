@@ -1,0 +1,21 @@
+package arrays;
+
+public class StringToInt {
+
+	public static int convertToInt(String s, int a){
+		if(a < 0)
+			return 0;
+		else{
+			int b = (int) ((s.charAt(a)-48)*Math.pow(10, (s.length()-a-1)));
+			return b + convertToInt(s, a-1);
+		}
+
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String s = "123a21";
+		System.out.println(convertToInt(s, s.length()-1));
+	}
+
+}

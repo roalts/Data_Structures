@@ -1,0 +1,20 @@
+package arrays;
+
+public class RemoveX {
+
+	public static String noX(String s, int a){
+		if(a > s.length()-1)
+			return s;
+		else if(s.charAt(a) == 'x'){
+			s = s.substring(0,a) + s.substring(a+1,s.length());
+			return noX(s,a);
+		}
+		else
+			return noX(s,a);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(noX("xabcxxxxdefx",0));
+	}
+
+}
