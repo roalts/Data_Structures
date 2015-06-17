@@ -50,6 +50,10 @@ public class LinkedListUse {
 			Node<Integer> temp = head;
 			while(position > 1 && temp != null){
 				temp = temp.next;
+				if(temp.next == null){
+					temp.next = newNode; 
+					return head;
+				}
 				position--;
 			}
 			newNode.next = temp.next;
@@ -57,6 +61,23 @@ public class LinkedListUse {
 		}
 		return head;
 	
+	}
+	
+	public static Node<Integer> deleteElement(Node<Integer> head, int position){
+		if(position == 0){
+			head = head.next;
+		}else {
+			Node<Integer> temp = head;
+			while(position > 1){
+				temp = temp.next;
+				position--;
+			}
+			Node<Integer> nextElement = temp;
+			nextElement = nextElement.next;
+			temp.next = nextElement.next;
+			System.gc();
+		}
+		return head;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -68,7 +89,9 @@ public class LinkedListUse {
 		}
 		tail = insertElement(tail, 3);
 		printLL(tail);
-		
+		System.out.println();
+		tail = deleteElement(tail, 3);
+		printLL(tail);
 	}
 
 }
