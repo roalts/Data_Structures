@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;arrays&apos; to &apos;recursion&apos;&#x0A;- Original project: &apos;Data Structures&apos;&#x0A;- Original element: &apos;Data Structures/src/arrays&apos;&#x0A;- Renamed element: &apos;Data Structures/src/recursion&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;arrays&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;arrays" name="recursion" qualified="false" references="true" stamp="1434209281784" textual="false" version="1.0"/>
+</session>
