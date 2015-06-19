@@ -35,6 +35,19 @@ public class FindLoop {
 		}
 		return head;
 	}
+	public static boolean findLoopFlyodAlgorithm(NewNode head){
+		NewNode fastNode = head;
+		
+		
+		while(fastNode != null && fastNode.next != null && head != null){
+				head = head.next;
+				fastNode = fastNode.next.next;
+				if(head == fastNode){
+					return true;
+				}
+		}
+		return false;
+	}
 	public static NewNode sampleInput(){
 		NewNode head = new NewNode();
 		NewNode tail = new NewNode();;
@@ -61,6 +74,7 @@ public class FindLoop {
 		// TODO Auto-generated method stub
 		
 		NewNode head = sampleInput();
-		System.out.println(findLoop(head));
+		
+		System.out.println(findLoopFlyodAlgorithm(head));
 	}
 }

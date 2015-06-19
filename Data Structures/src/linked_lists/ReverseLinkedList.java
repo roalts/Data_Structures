@@ -19,11 +19,12 @@ public class ReverseLinkedList {
 		}
 		
 		Node<Integer> smallerHead = reverseLinkedList(head.next);
-		Node<Integer> tail = smallerHead;
-		while(tail.next != null){
-			tail = tail.next;
-		}
-		tail.next = head;
+//		Node<Integer> tail = smallerHead;
+//		while(tail.next != null){
+//			tail = tail.next;
+//		}
+//		tail.next = head;
+		head.next.next = head;
 		head.next = null;
 		return smallerHead;
 	}
