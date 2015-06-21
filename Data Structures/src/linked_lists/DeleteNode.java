@@ -24,6 +24,7 @@ public class DeleteNode {
 			input = s.nextInt();
 			
 		}
+		s.close();
 		return head;
 	}
 	
