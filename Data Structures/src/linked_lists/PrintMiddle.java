@@ -1,7 +1,5 @@
 package linked_lists;
 
-import javax.media.j3d.Link;
-
 public class PrintMiddle {
 
 	public static int printMiddleNode(Node<Integer> head) {
