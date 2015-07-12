@@ -27,8 +27,8 @@ public class DeleteDuplicates {
 		Node<Integer> current = head;
 		while(current != null) {
 			Node<Integer> runner = current;
-			while(runner.next != null){
-				if(runner.next.data == current.data){
+			while(runner.next != null) {
+				if(runner.next.data == current.data) {
 					runner.next = runner.next.next;
 				} else {
 					runner = runner.next;
