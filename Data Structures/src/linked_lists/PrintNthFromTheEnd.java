@@ -3,6 +3,7 @@ package linked_lists;
 public class PrintNthFromTheEnd {
 
 	public static void printFromEnd(Node<Integer> head, int n) {
+		//iterative method
 		int totalNodes = numberofNodes(head);
 		int i = 0;
 		Node<Integer> temp = head;
