@@ -21,7 +21,7 @@ public class DeleteDuplicates {
 		return;
 	}
 	
-	public static void deleteDuplicates(Node<Integer> head) {
+	public static void deleteDuplicateWithoutBuffer(Node<Integer> head) {
 		if(head == null)
 			return;
 		Node<Integer> current = head;
@@ -43,7 +43,7 @@ public class DeleteDuplicates {
 	public static void main(String[] args) {
 		Node<Integer> head = LinkedListUse.takeInput();
 	//	deleteDuplicate(head);
-		deleteDuplicates(head);
+		deleteDuplicateWithoutBuffer(head);
 		LinkedListUse.printLL(head);
 	}
 }
