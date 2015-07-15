@@ -16,6 +16,7 @@ public class CheckPalindrome {
 	}
 	
 	public static Node<Integer> reverseLL(Node<Integer> head) {
+		//reverse linked list
 		if(head == null || head.next == null){
 			return head;
 		}
@@ -27,6 +28,7 @@ public class CheckPalindrome {
 		return smallerHead;
 	}
 	public static boolean checkPalindrome(Node<Integer> head) {
+		//to check for palindrome
 		Node<Integer> mid = head;
 		if(head != null) {
 			mid = returnMiddle(head);
