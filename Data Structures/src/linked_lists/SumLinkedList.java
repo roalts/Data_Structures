@@ -23,13 +23,22 @@ public class SumLinkedList {
 		return head;
 	}
 	
+	public class PartialSum {
+		int carry = 0;
+		Node<Integer> sum;
+	}
+	
+	public static Node<Integer> reverseSum(Node<Integer> number1, Node<Integer> number2) {
+		Node<Integer> head = new Node<Integer>();
+		return head;
+		
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Node<Integer> number1 = LinkedListUse.takeInput();
 		Node<Integer> number2 = LinkedListUse.takeInput();
-		
 		Node<Integer> head = sum(number1, number2);
-		
 		
 		LinkedListUse.printLL(head);
 	}
