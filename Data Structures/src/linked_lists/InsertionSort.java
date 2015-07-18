@@ -6,7 +6,7 @@ public class InsertionSort {
 
 	public static Node<Integer> insert(Node<Integer> head, Node<Integer> newNode){
 		Node<Integer> tail = head;
-		if(head == null){
+		if(head == null) {
 			return newNode;
 		}
 		else if(head.data > newNode.data) {
@@ -26,7 +26,7 @@ public class InsertionSort {
 		}
 		return head;
 	}
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		Node<Integer> head = LinkedListUse.takeInput();
 		Node<Integer> newNode = new Node<Integer>();
