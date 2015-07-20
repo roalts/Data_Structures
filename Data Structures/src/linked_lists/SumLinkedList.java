@@ -34,6 +34,16 @@ public class SumLinkedList {
 		
 		
 	}
+	
+	public static int linkedListLength(Node<Integer> head) {
+		int count = 0;
+		while(head != null){
+			head = head.next;
+			count++;
+		}
+		return count;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Node<Integer> number1 = LinkedListUse.takeInput();
