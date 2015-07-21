@@ -30,10 +30,21 @@ public class SumLinkedList {
 	
 	public static Node<Integer> reverseSum(Node<Integer> number1, Node<Integer> number2) {
 		Node<Integer> head = new Node<Integer>();
+		int length1 = linkedListLength(number1);
+		int length2 = linkedListLength(number2);
+		if(length1 != length2) {
+			if(length1 > length2) { 
+				number1 = padZeros(number1, length1 - length2);
+			} else {
+				number2 = padZeros(number2, Math.abs(length1 - length2));
+			}
+		}
+		//Node<Integer> sum = addLinkedList(number1, number2);
 		return head;
 		
 		
 	}
+	
 	
 	public static int linkedListLength(Node<Integer> head) {
 		int count = 0;
@@ -44,6 +55,18 @@ public class SumLinkedList {
 		return count;
 	}
 	
+	public static Node<Integer> padZeros(Node<Integer> head, int padding) {
+		Node<Integer> temp = head;
+		while(temp.next != null) {
+			temp = temp.next;
+		}
+		for(int i = 0; i < padding; i++) {
+			temp.next = new Node<Integer>();
+			temp = temp.next;
+			temp.data = 0;
+		}
+		return head;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Node<Integer> number1 = LinkedListUse.takeInput();
