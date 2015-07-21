@@ -22,14 +22,14 @@ public class SumLinkedList {
 		}
 		return head;
 	}
-	
+
 	public class PartialSum {
 		int carry = 0;
 		Node<Integer> sum;
 	}
-	
+
 	public static Node<Integer> reverseSum(Node<Integer> number1, Node<Integer> number2) {
-		Node<Integer> head = new Node<Integer>();
+		
 		int length1 = linkedListLength(number1);
 		int length2 = linkedListLength(number2);
 		if(length1 != length2) {
@@ -39,13 +39,39 @@ public class SumLinkedList {
 				number2 = padZeros(number2, Math.abs(length1 - length2));
 			}
 		}
-		//Node<Integer> sum = addLinkedList(number1, number2);
-		return head;
-		
-		
+		Node<Integer> sum = addLinkedList(number1, number2);
+		if(sum.carry == 0) {
+			return sum;
+		} else {
+			Node<Integer> temp = new Node<Integer>();
+			temp.data = sum.carry;
+			temp.next = sum;
+			sum = temp;
+			return sum;
+		}		
 	}
-	
-	
+
+	public static Node<Integer> addLinkedList(Node<Integer> number1, Node<Integer> number2) {
+		Node<Integer> sum = new Node<Integer>();
+		
+		while(number1 != null && number2 != null) {	
+			Node<Integer> smallerSum = addLinkedList(number1.next, number2.next);
+			Node<Integer> temp = new Node<Integer>();
+			if(smallerSum.carry == 0) {
+				temp.data = number1.data + number2.data;
+				temp.carry = temp.data/10;
+				temp.next = sum;
+				sum = temp;
+			} else {
+				temp.data = number1.data + number2.data + smallerSum.carry;
+				temp.carry = temp.data/10;
+				temp.next = sum;
+				sum = temp;
+			}
+		}
+		return sum;
+	}
+
 	public static int linkedListLength(Node<Integer> head) {
 		int count = 0;
 		while(head != null){
@@ -54,7 +80,7 @@ public class SumLinkedList {
 		}
 		return count;
 	}
-	
+
 	public static Node<Integer> padZeros(Node<Integer> head, int padding) {
 		Node<Integer> temp = head;
 		while(temp.next != null) {
@@ -71,8 +97,8 @@ public class SumLinkedList {
 		// TODO Auto-generated method stub
 		Node<Integer> number1 = LinkedListUse.takeInput();
 		Node<Integer> number2 = LinkedListUse.takeInput();
-		Node<Integer> head = sum(number1, number2);
-		
+		Node<Integer> head = reverseSum(number1, number2);
+
 		LinkedListUse.printLL(head);
 	}
 
