@@ -29,16 +29,19 @@ public class SumLinkedList {
 	}
 
 	public static Node<Integer> reverseSum(Node<Integer> number1, Node<Integer> number2) {
-		
+
 		int length1 = linkedListLength(number1);
 		int length2 = linkedListLength(number2);
 		if(length1 != length2) {
 			if(length1 > length2) { 
-				number1 = padZeros(number1, length1 - length2);
+				number2 = padZeros(number2, length1 - length2);
+				
 			} else {
-				number2 = padZeros(number2, Math.abs(length1 - length2));
+				number1 = padZeros(number1, Math.abs(length1 - length2));
+				
 			}
 		}
+		Node<Integer> tempo = new Node<Integer>();
 		Node<Integer> sum = addLinkedList(number1, number2);
 		if(sum.carry == 0) {
 			return sum;
@@ -52,24 +55,17 @@ public class SumLinkedList {
 	}
 
 	public static Node<Integer> addLinkedList(Node<Integer> number1, Node<Integer> number2) {
-		Node<Integer> sum = new Node<Integer>();
-		
 		while(number1 != null && number2 != null) {	
 			Node<Integer> smallerSum = addLinkedList(number1.next, number2.next);
 			Node<Integer> temp = new Node<Integer>();
-			if(smallerSum.carry == 0) {
-				temp.data = number1.data + number2.data;
-				temp.carry = temp.data/10;
-				temp.next = sum;
-				sum = temp;
-			} else {
-				temp.data = number1.data + number2.data + smallerSum.carry;
-				temp.carry = temp.data/10;
-				temp.next = sum;
-				sum = temp;
-			}
+			temp.data = number1.data + number2.data + smallerSum.carry;
+			temp.carry = temp.data/10;
+			temp.data = temp.data%10;
+			temp.next = smallerSum;
+			smallerSum = temp;
+			return smallerSum;
 		}
-		return sum;
+		return new Node<Integer>();
 	}
 
 	public static int linkedListLength(Node<Integer> head) {
@@ -82,14 +78,11 @@ public class SumLinkedList {
 	}
 
 	public static Node<Integer> padZeros(Node<Integer> head, int padding) {
-		Node<Integer> temp = head;
-		while(temp.next != null) {
-			temp = temp.next;
-		}
 		for(int i = 0; i < padding; i++) {
-			temp.next = new Node<Integer>();
-			temp = temp.next;
-			temp.data = 0;
+			Node<Integer> newNode = new Node<Integer>();
+			newNode.data = 0;
+			newNode.next = head;
+			head = newNode;
 		}
 		return head;
 	}
