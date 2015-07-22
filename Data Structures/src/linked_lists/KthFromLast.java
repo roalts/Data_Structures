@@ -6,7 +6,7 @@ public class KthFromLast {
 		if(k <= -1)
 			return -1;
 		Node<Integer> ahead = head;
-		for(int i = 0; i < k; i++){
+		for(int i = 0; i < k-1; i++){
 			if(ahead == null)
 				return -1;
 			ahead = ahead.next;
