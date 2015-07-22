@@ -28,7 +28,7 @@ public class CheckPalindrome {
 		return smallerHead;
 	}
 	public static boolean checkPalindrome(Node<Integer> head) {
-		//to check for palindrome
+		//to check for pallindrome
 		Node<Integer> mid = head;
 		if(head != null) {
 			mid = returnMiddle(head);
@@ -45,7 +45,13 @@ public class CheckPalindrome {
 		}
 		return true;
 	}
-	
+	public static boolean isPalindrome(Node<Integer> head, int length) {
+		if(head == null || length == 0) {
+			return true;
+		} else if (length == 1) {
+			
+		}
+	}
 	public static void main(String[] args) {
 		Node<Integer> head = LinkedListUse.takeInput();
 		System.out.println(checkPalindrome(head));
