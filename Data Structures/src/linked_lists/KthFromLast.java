@@ -2,7 +2,7 @@ package linked_lists;
 
 public class KthFromLast {
 
-	public static int kthFromLast(Node<Integer> head, int k) {
+	public static int kthFromLastIterative(Node<Integer> head, int k) {
 		if(k <= -1)
 			return -1;
 		Node<Integer> ahead = head;
@@ -17,6 +17,24 @@ public class KthFromLast {
 			ahead = ahead.next;
 		}
 		
+		return head.data;
+	}
+	
+	public static int kthFromLast(Node<Integer> head, int k){
+		if(k <= -1)
+			return -1;
+		Node<Integer> length = head;
+		int count = 0;
+		while(length != null) {
+			count++;
+			length = length.next;
+		}
+		
+		for(int i = 0; i < count - k; i++) {
+			if(head == null)
+				return -1;
+			head = head.next;
+		}
 		return head.data;
 	}
 	
