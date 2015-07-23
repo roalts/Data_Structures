@@ -21,11 +21,12 @@ public class StackUsingLL<T> {
 		return count;
 	}
 	public void push(Node<T> item) {
+		count++;
 		item.next = head;
 		head = item;
 		}
 	
-	public Node<T> pop() throws StackEmptyException{
+	public T pop() throws StackEmptyException{
 		if(size() == 0) {
 			StackEmptyException e = new StackEmptyException();
 			throw e;
@@ -33,7 +34,7 @@ public class StackUsingLL<T> {
 		Node<T> item;
 		item = head;
 		head = head.next;
-		return item;
+		return item.data;
 	}
 	
 	public boolean isEmpty() {
