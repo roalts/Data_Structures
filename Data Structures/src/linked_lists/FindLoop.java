@@ -15,7 +15,7 @@ public class FindLoop {
 		return false;
 	}
 	
-	public static NewNode loopFind(NewNode head) {
+	public static NewNode meetingPoint(NewNode head) {
 		if(head == null){
 			return head;
 		}
@@ -28,7 +28,19 @@ public class FindLoop {
 			if(fast == slow)
 				return slow;
 		}
-		return head;
+		return slow;
+	}
+	
+	public static NewNode findStartOfLoop(NewNode head) {
+		NewNode slow = head;
+		NewNode fast = meetingPoint(head);
+		while(head != null) {
+			if(slow == fast)
+				return slow;
+			fast = fast.next;
+			slow = slow.next;
+		}
+		return null;
 	}
 	public static NewNode takeInput(){
 		NewNode head, tail;
@@ -91,6 +103,6 @@ public class FindLoop {
 		
 		NewNode head = sampleInput();
 		
-		System.out.println(loopFind(head).data);
+		System.out.println(findStartOfLoop(head).data);
 	}
 }
