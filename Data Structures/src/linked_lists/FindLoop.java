@@ -14,6 +14,22 @@ public class FindLoop {
 		}
 		return false;
 	}
+	
+	public static NewNode loopFind(NewNode head) {
+		if(head == null){
+			return head;
+		}
+		NewNode fast = head;
+		NewNode slow = head;
+		
+		while(fast != null && fast.next != null) {
+			fast = fast.next.next;
+			slow = slow.next;
+			if(fast == slow)
+				return slow;
+		}
+		return head;
+	}
 	public static NewNode takeInput(){
 		NewNode head, tail;
 		head = tail = null;
@@ -65,7 +81,7 @@ public class FindLoop {
 		tail2.next = tail3;
 		tail4.data = 5;
 		tail3.next = tail4;
-		tail4.next = tail5;
+		tail4.next = tail2;
 		
 		return head;
 		
@@ -75,6 +91,6 @@ public class FindLoop {
 		
 		NewNode head = sampleInput();
 		
-		System.out.println(findLoopFlyodAlgorithm(head));
+		System.out.println(loopFind(head).data);
 	}
 }
