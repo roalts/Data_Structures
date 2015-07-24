@@ -20,8 +20,10 @@ public class StackUsingLL<T> {
 	public int size() {
 		return count;
 	}
-	public void push(Node<T> item) {
+	public void push(T element) {
+		Node<T> item = new Node<T>();
 		count++;
+		item.data = element;
 		item.next = head;
 		head = item;
 		}
@@ -34,13 +36,14 @@ public class StackUsingLL<T> {
 		Node<T> item;
 		item = head;
 		head = head.next;
+		count--;
 		return item.data;
 	}
 	
 	public boolean isEmpty() {
-		if(size() != 0)
-			return false;
-		else 
+		if(size() == 0)
 			return true;
+		else 
+			return false;
 	}
 }
