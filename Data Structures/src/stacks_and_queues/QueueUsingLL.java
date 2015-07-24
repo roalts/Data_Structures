@@ -22,8 +22,10 @@ public class QueueUsingLL<T> {
 		else
 			return false;
 	}
-	public void enqueue(Node<T> item) {
+	public void enqueue(T element) {
 		count++;
+		Node<T> item = new Node<T>();
+		item.data = element;
 		if(tail == null) {
 			head = item;
 			tail = item;
@@ -40,6 +42,7 @@ public class QueueUsingLL<T> {
 		}
 		T item = head.data;
 		head = head.next;
+		count--;
 		return item;	
 	}
 }
