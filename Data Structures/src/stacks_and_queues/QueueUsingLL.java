@@ -1,7 +1,5 @@
 package stacks_and_queues;
 
-import java.util.Queue;
-
 public class QueueUsingLL<T> {
 	
 	private Node<T> tail;
@@ -22,6 +20,7 @@ public class QueueUsingLL<T> {
 		else
 			return false;
 	}
+	
 	public void enqueue(T element) {
 		count++;
 		Node<T> item = new Node<T>();
