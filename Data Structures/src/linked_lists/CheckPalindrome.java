@@ -45,13 +45,13 @@ public class CheckPalindrome {
 		}
 		return true;
 	}
-	public static boolean isPalindrome(Node<Integer> head, int length) {
-		if(head == null || length == 0) {
-			return true;
-		} else if (length == 1) {
-			
-		}
-	}
+//	public static boolean isPalindrome(Node<Integer> head, int length) {
+//		if(head == null || length == 0) {
+//			return true;
+//		} else if (length == 1) {
+//			
+//		}
+//	}
 	public static void main(String[] args) {
 		Node<Integer> head = LinkedListUse.takeInput();
 		System.out.println(checkPalindrome(head));
