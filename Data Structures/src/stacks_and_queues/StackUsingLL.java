@@ -17,6 +17,13 @@ public class StackUsingLL<T> {
 		return head.data;
 	}
 	
+	public boolean isFull() {
+		if(count >= 10) {
+			return true;
+		} else 
+			return false;
+	}
+	
 	public int size() {
 		return count;
 	}
