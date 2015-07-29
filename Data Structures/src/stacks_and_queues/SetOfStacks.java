@@ -16,9 +16,12 @@ public class SetOfStacks {
 		StackUsingLL<Integer> last = getLastStack();
 		if(last != null && !last.isFull()){
 			last.push(element);
+			System.out.println(element);
 		} else {
 			StackUsingLL<Integer> stack = new StackUsingLL<Integer>();
 			stack.push(element);
+			System.out.println(element);
+			System.out.println("New Stack");
 			stacks.add(stack);
 		}
 	} 
