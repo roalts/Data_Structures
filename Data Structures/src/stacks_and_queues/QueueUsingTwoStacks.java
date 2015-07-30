@@ -14,7 +14,20 @@ public class QueueUsingTwoStacks {
 		stack1.push(element);
 		count++;
 	}
-
+	public void slowEnqueue(int element) throws StackEmptyException {
+		while(!stack2.isEmpty()) {
+			stack1.push(stack2.pop());
+		}
+		stack1.push(element);
+		while(!stack1.isEmpty()) {
+		stack2.push(stack1.pop());
+		}
+	}
+	
+	public int fastDequeue() throws StackEmptyException {
+		int temp = stack2.pop();
+		return temp;
+	}
 	public int dequeue() {
 		int temp = 0;
 		while(!stack1.isEmpty()) {
