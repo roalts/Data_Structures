@@ -7,7 +7,7 @@ public class QueueUse {
 		long start = System.currentTimeMillis();
 		System.out.println(start);
 		for(int i = 0; i < 20000; i++) {
-			queue.enqueue(i);
+			queue.slowEnqueue(i);
 			}
 		for(int i = 0; i < 20000; i++) {
 			queue.fastDequeue();
