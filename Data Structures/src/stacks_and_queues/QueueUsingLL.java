@@ -41,6 +41,8 @@ public class QueueUsingLL<T> {
 		}
 		T item = head.data;
 		head = head.next;
+		if(head == null)
+			tail = null;
 		count--;
 		return item;	
 	}
