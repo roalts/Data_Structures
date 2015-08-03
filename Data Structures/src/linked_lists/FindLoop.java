@@ -15,6 +15,8 @@ public class FindLoop {
 		return false;
 	}
 	
+	
+	
 	public static NewNode meetingPoint(NewNode head) {
 		if(head == null){
 			return head;
