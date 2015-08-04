@@ -20,13 +20,14 @@ public class UniqueCharacters {
 		return true;
 	}
 	
-	public static boolean isUniqueChar(String s) {
-		HashSet<Character> hashSet = new HashSet<Character>();
-		for(int i = 0; i < s.length(); i++) {
-			if(hashSet.contains(s.charAt(i)))
+	public static boolean isUniqueChar(String input) {
+		int count[] = new int[256];
+		for(int i = 0; i < input.length(); i++) {
+			count[input.charAt(i)]++; 
+		}
+		for(int i = 0; i < input.length(); i++) {
+			if(count[input.charAt(i)] != 1)
 				return false;
-			else 
-				hashSet.add(s.charAt(i));
 		}
 		return true;
 	}
