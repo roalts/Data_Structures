@@ -1,5 +1,6 @@
 package arrays_and_strings;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -30,6 +31,15 @@ public class UniqueCharacters {
 				return false;
 		}
 		return true;
+	}
+	
+	public static boolean isUniqueHashMap(String input) {
+		HashMap<Integer, Character> map = new HashMap<Integer, Character>();
+		for(int i = 0; i < input.length(); i++) {
+			if(map.containsValue(input.charAt(i))) {
+				map.put(key, value)
+			}
+		}
 	}
 	
 	public static void main(String[] args) {

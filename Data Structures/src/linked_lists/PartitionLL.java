@@ -5,6 +5,7 @@ public class PartitionLL {
 	public static Node<Integer> partition(Node<Integer> head, int data) {
 		Node<Integer> lowHead = null, lowTail = null;
 		Node<Integer> highHead = null, highTail = null;
+		
 		while(head != null) {
 			if(head.data < data){
 				if(lowHead == null){

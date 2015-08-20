@@ -48,14 +48,31 @@ public class BinaryTreeUse {
 				queue.enqueue(currentNode.left);
 			}
 			if(currentNode.right != null) {
-				toBePrinted = toBePrinted + currentNode.right.data + ", "; 
+				toBePrinted = toBePrinted + currentNode.right.data ; 
 				queue.enqueue(currentNode.right);
 			}
 			System.out.println(toBePrinted);
 		}
 	}
+	public static void printLevelOrder(BinaryTreeNode<Integer> root) throws QueueEmptyException {
+//		QueueUsingLL<BinaryTreeNode<Integer>> queue = new QueueUsingLL<BinaryTreeNode<Integer>>();
+//		queue.enqueue(root);
+//		while(!queue.isEmpty()){
+//			BinaryTreeNode<Integer> currentNode = queue.dequeue();
+//			System.out.print(currentNode.data + " ");
+//			if(currentNode.left != null) 
+//				queue.enqueue(currentNode.left);
+//			if(currentNode.right != null)
+//				queue.enqueue(currentNode.right);
+//		}
+//		return;
+		
+		
+		
+	}
+	
 	public static void main(String[] args) throws QueueEmptyException {
 		BinaryTreeNode<Integer> root = takeInput();
-		printBinaryTree(root);
+		printLevelOrder(root);
 	}
 }

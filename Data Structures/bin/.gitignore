@@ -1,9 +1,8 @@
+/.DS_Store
+/arrays_and_strings
+/binary_tree
 /linked_lists
 /recursion
-/stack
-/.DS_Store
-/binary_tree
-/stacks_and_queues
-/tree
-/arrays_and_strings
 /sorting
+/stack
+/stacks_and_queues

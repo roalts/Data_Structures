@@ -38,7 +38,23 @@ public class DeleteNode {
 				node = null;
 			}
 	}
-
+public static Node<Integer> delete(Node<Integer> head, int position) {
+    if(position == 0){
+        head = head.next;
+        return head;
+    }
+    Node<Integer> currentNode = head;
+    while(position > 1) {
+        position--;
+        currentNode = currentNode.next;
+    }
+    if(currentNode.next != null) 
+        currentNode = currentNode.next.next;
+    else {
+        currentNode = null;
+    }
+    return head;
+}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Node<Integer> head = takeInput();
@@ -46,8 +62,8 @@ public class DeleteNode {
 		while(tail.next != null){
 			tail = tail.next;
 		}
-		deleteNode(tail);
-		
+//		deleteNode(tail);
+		head=delete(head, 1);
 		LinkedListUse.printLL(head);
 		
 	}
